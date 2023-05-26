@@ -1,5 +1,5 @@
 // referring to Activity 26 -> controllers -> userController.js
-// referring to Activity 28 -> controllers -> courseController.js
+// referring to Activity 28 -> controllers -> courseController.js and studentController.js
 const { User, Thought } = require('../models');
 
 module.exports = {
@@ -66,6 +66,47 @@ module.exports = {
 
             await Thought.deleteMany({ _id: { $in: user.thoughts } });
             res.json({ message: 'User and thoughts deleted!' });
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
+    // Add new friend
+    async addFriend(req, res) {
+        try {
+            const { userId, friendId } = req.params;
+            const user = await User.findOneAndUpdate(
+                { _id: userId },
+                { $addToSet: { friends: friendId } },
+                { runValidators: true, new: true }
+            );
+
+            if (!user) {
+                return res.status(404).json({ message: 'No user found with that ID' });
+            }
+
+            res.json(user);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+
+    },
+    // Remove friend 
+    async removeFriend(req, res) {
+        try {
+            const { userId, friendId } = req.params;
+
+            // remove friendId from user's friends list 
+            const user = await User.findOneAndUpdate(
+                { _id: userId },
+                { $pull: { friends: friendId } },
+                { new: true }
+            );
+
+            if (!user) {
+                return res.status(404).json({ message: 'No user with that ID' });
+            }
+
+            res.json(user);
         } catch (err) {
             res.status(500).json(err);
         }
