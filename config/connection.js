@@ -1,6 +1,9 @@
-// referring to Activity 14 -> config -> connection.js
-const mongoose = require('mongoose');
+// referring to Activity 28 -> config -> connection.js
+const { connect, connection } = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/socialnetworkDB');
+const connectionString =
+    process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialnetworkDB';
 
-module.exports = mongoose.connection;
+connect(connectionString)
+
+module.exports = connection;
