@@ -1,5 +1,6 @@
 // referring to Activity 26 -> controllers -> userController.js
 // referring to Activity 28 -> controllers -> courseController.js and studentController.js
+// referring to Activity 24 -> controllers -> postController.js
 const { User, Thought } = require('../models');
 
 module.exports = {
@@ -16,7 +17,8 @@ module.exports = {
     async getSingleUser(req, res) {
         try {
             const user = await User.findOne({ _id: req.params.userId })
-                .select('-__v');
+                .populate({ path: 'thoughts', select: '-__v' })
+                .populate({ path: 'friends', select: '-__v' });
             
             if (!user) {
                 return res.status(404).json({ message: 'No user with that ID' });
@@ -24,6 +26,7 @@ module.exports = {
 
             res.json(user);
         } catch (err) {
+            console.log(err)
             res.json(500).json(err);
         }
     },
