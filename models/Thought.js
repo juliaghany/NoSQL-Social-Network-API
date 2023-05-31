@@ -1,7 +1,7 @@
 // referring to Activity 28 (mini project) and Activity 21
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
-const format_date = require('../utils/helpers');
+const { format_date } = require('../utils/helpers');
 
 // schema to create Thought model
 const thoughtSchema = new Schema(
@@ -29,6 +29,7 @@ const thoughtSchema = new Schema(
             getters: true,
             virtuals: true,
         },
+        id: false,
     }
 );
 
