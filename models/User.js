@@ -22,8 +22,8 @@ const userSchema = new Schema(
                 message: 'Please provide a valid email address',
             },
         },
-        thoughts: [{ type: Schema.Types.ObjectId, ref: 'Thought' }],
-        friends: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+        thoughts: [{ type: Schema.Types.ObjectId, ref: 'thought' }],
+        friends: [{ type: Schema.Types.ObjectId, ref: 'user' }],
     },
     {
         toJSON: {
@@ -43,5 +43,3 @@ userSchema.virtual('friendCount').get(function () {
 const User = model('user', userSchema);
 
 module.exports = User;
-
-// commit message: add user model with username, email, thoughts, and friends fields"
