@@ -1,6 +1,6 @@
 // referring to Activity 28 Assignments model
 const { Schema, Types } = require('mongoose');
-const format_date = require('../utils/helpers');
+const { format_date } = require('../utils/helpers');
 
 const reactionSchema = new Schema(
     {
