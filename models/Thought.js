@@ -43,9 +43,3 @@ thoughtSchema.virtual('reactionCount').get(function () {
 const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought;
-
-// {
-//     "username": "cardinalsrule",
-//         "thoughtText": "The cardinals are the best",
-//             "userId": "64779266ff24bbfa050c1e76"
-// }
