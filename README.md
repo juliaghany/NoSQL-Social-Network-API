@@ -2,14 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+Link to demonstration video: 
+
 ## Description 
 
 This is an API for a social network web application where users can post, update, and delete their thoughts, react to other user's thoughts, and add and remove friends from their friend list. This API was built using Express.js for routing, MongoDB for the database, and the Mongoose ODM. 
-
-## Table Of Contents 
-- [Technologies Used](#technologies-used)<br>
-- [License](#license)<br>
-- [Credits](#credits)<br>
 
 ## Technologies Used
 

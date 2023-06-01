@@ -1,4 +1,4 @@
-// referring to Activity 28 (mini project) and Activity 21
+// referring to Activity 28 models and Activity 21 models
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 const { format_date } = require('../utils/helpers');
@@ -12,7 +12,6 @@ const thoughtSchema = new Schema(
             maxlength: 280,
             minlength: 1,
         },
-        // how would I format date? 
         createdAt: {
             type: Date,
             default: Date.now,

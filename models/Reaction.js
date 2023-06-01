@@ -1,7 +1,8 @@
-// referring to Activity 28 Assignments model
+// referring to Activity 28 -> models -> Assignment.js
 const { Schema, Types } = require('mongoose');
 const { format_date } = require('../utils/helpers');
 
+// define schema for a reaction 
 const reactionSchema = new Schema(
     {
         reactionId: {

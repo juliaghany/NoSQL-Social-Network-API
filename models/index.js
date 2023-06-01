@@ -1,4 +1,4 @@
-// referre
+// referring to Activity 28 -> models -> index.js
 const User = require('./User');
 const Reaction = require('./Reaction');
 const Thought = require('./Thought');

@@ -1,8 +1,9 @@
 // referring to Activity 18 -> server.js file 
+// set up express application with necessary configs and connections
 const express = require('express');
 const db = require('./config/connection');
 const routes = require('./routes');
-
+// connect to database and start the API on specified port 
 const PORT = 3001;
 const app = express();
 

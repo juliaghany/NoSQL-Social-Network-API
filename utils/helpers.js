@@ -1,5 +1,5 @@
 // referenced Module 14 Activity 15
-// formats date to MM/DD/YYYY
+// formats date to MM/DD/YYYY and time to h:mm AM/PM
 
 const dayjs = require('dayjs');
 

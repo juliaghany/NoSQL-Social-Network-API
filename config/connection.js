@@ -1,4 +1,5 @@
 // referring to Activity 28 -> config -> connection.js
+// establish connection to MongoDB
 const { connect, connection } = require('mongoose');
 // require("dotenv").config()
 const connectionString =

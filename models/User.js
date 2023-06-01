@@ -1,4 +1,4 @@
-// referring to Activity 21
+// referring to Activity 21 -> models
 const { Schema, model } = require('mongoose');
 
 // Schema to create User model
